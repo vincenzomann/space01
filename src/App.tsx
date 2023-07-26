@@ -9,7 +9,10 @@ function App() {
 	const [filter, setFilter] = useState('');
 
 	useEffect(() => {
-		setItems(data);
+		// on initial render, show 5 cheapest items
+		const sorted = [...data].sort((a, b) => a.price - b.price);
+		const limited = sorted.slice(0, 5);
+		setItems(limited);
 	}, []);
 
 	return (
