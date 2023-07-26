@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Items } from '../../data';
+import { Item } from '../../data';
 
 interface ListActionProps {
-	setItems: Dispatch<SetStateAction<Items[]>>;
+	setItems: Dispatch<SetStateAction<Item[]>>;
 	setFilter: Dispatch<SetStateAction<string>>;
 }
 

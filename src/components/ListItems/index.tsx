@@ -1,13 +1,36 @@
 import React from 'react';
-import { Items } from '../../data';
+import { Item } from '../../data';
+import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 
 interface ListItemsProps {
-	data: Items[];
+	data: Item[];
 }
 
 const ListItems = ({ data }: ListItemsProps) => {
+
 	return (
-		<div>ListItems</div>
+		<TableContainer component={Paper}>
+			<Table aria-label="simple table">
+				<TableHead>
+					<TableRow >
+						<TableCell sx={{ fontWeight: '700' }}>Item name</TableCell>
+						<TableCell sx={{ fontWeight: '700' }}>Price</TableCell>
+					</TableRow>
+				</TableHead>
+				<TableBody>
+					{data.map((row) => (
+						<TableRow
+							key={row.name}
+						>
+							<TableCell>
+								{row.name}
+							</TableCell>
+							<TableCell >{row.price}</TableCell>
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
+		</TableContainer>
 	);
 };
 

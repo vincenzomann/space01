@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Items } from './data';
+import { Item, data } from './data';
 import ListActions from './components/ListActions';
 import ListItems from './components/ListItems';
 
 function App() {
-	const [items, setItems] = useState<Items[]>([]);
+	const [items, setItems] = useState<Item[]>([]);
 	const [filter, setFilter] = useState('');
+
+	useEffect(() => {
+		setItems(data);
+	}, []);
 
 	return (
 		<div className="App">

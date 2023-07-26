@@ -1,9 +1,9 @@
-export interface Items {
+export interface Item {
 	name: string;
 	price: number;
 }
 
-export const data: Items[] = [
+export const data: Item[] = [
 	{ name: 'Item A', price: 125 },
 	{ name: 'Item B', price: 230 },
 	{ name: 'Item C', price: 295 },
