@@ -1,19 +1,20 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { Item } from '../../data';
 import Toggle, { ToggleValues } from '../Toggle';
+import { Stack, TextField } from '@mui/material';
 
 interface ListActionProps {
-	setItems: Dispatch<SetStateAction<Item[]>>;
 	setFilter: Dispatch<SetStateAction<string>>;
 	order: ToggleValues;
 	setOrder: Dispatch<SetStateAction<ToggleValues>>;
 }
 
-const ListActions = ({ setItems, setFilter, order, setOrder }: ListActionProps) => {
+const ListActions = ({ setFilter, order, setOrder }: ListActionProps) => {
 	return (
-		<div>
+		<Stack sx={{ width: '300px', margin: 'auto' }}>
 			<Toggle order={order} setOrder={setOrder} />
-		</div>
+			<TextField id="filter" label="filter by name" variant="outlined" onChange={(e) => setFilter(e.target.value)} />
+		</Stack>
 	);
 };
 

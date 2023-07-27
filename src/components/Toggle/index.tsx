@@ -17,7 +17,9 @@ const Toggle = ({ order, setOrder }: ListActionProps) => {
 		event: React.MouseEvent<HTMLElement>,
 		newOrder: ToggleValues,
 	) => {
-		setOrder(newOrder);
+		if (newOrder !== null) {
+			setOrder(newOrder);
+		}
 	};
 
 	return (

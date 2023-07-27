@@ -14,7 +14,7 @@ const ListItems = ({ data }: ListItemsProps) => {
 				<TableHead>
 					<TableRow >
 						<TableCell sx={{ fontWeight: '700' }}>Item name</TableCell>
-						<TableCell sx={{ fontWeight: '700' }}>Price</TableCell>
+						<TableCell sx={{ fontWeight: '700' }}>Price (£)</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>

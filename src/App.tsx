@@ -11,7 +11,6 @@ function App() {
 	const [order, setOrder] = useState<ToggleValues>(ToggleValues.CHEAPEST);
 
 	useEffect(() => {
-
 		let items: Item[] = [];
 		switch (order) {
 			case ToggleValues.ALL:
@@ -26,9 +25,18 @@ function App() {
 		setItems(items);
 	}, [order]);
 
+	useEffect(() => {
+		if (filter) {
+			const filtered = data.filter((item) => item.name.toLowerCase().includes(filter.toLowerCase()));
+			setItems(filtered);
+			setOrder(ToggleValues.ALL);
+		}
+	}, [filter]);
+
+
 	return (
 		<div className="App">
-			<ListActions setItems={setItems} setFilter={setFilter} order={order} setOrder={setOrder} />
+			<ListActions setFilter={setFilter} order={order} setOrder={setOrder} />
 			<ListItems data={items} />
 		</div>
 	);
