@@ -11,7 +11,7 @@ interface ListActionProps {
 
 const ListActions = ({ setFilter, order, setOrder }: ListActionProps) => {
 	return (
-		<Stack sx={{ width: '300px', margin: 'auto' }}>
+		<Stack sx={{ maxWidth: '300px', margin: 'auto' }}>
 			<Toggle order={order} setOrder={setOrder} />
 			<TextField id="filter" label="filter by name" variant="outlined" onChange={(e) => setFilter(e.target.value)} />
 		</Stack>
