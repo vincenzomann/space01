@@ -21,6 +21,7 @@ const ListItems = ({ data }: ListItemsProps) => {
 					{data.map((row) => (
 						<TableRow
 							key={row.name}
+							data-testid='list-row'
 						>
 							<TableCell>
 								{row.name}

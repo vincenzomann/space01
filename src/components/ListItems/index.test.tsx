@@ -8,3 +8,4 @@ test('renders table header', () => {
 	const element = screen.getByText(/Item name/i);
 	expect(element).toBeInTheDocument();
 });
+
