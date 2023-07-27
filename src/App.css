@@ -1,38 +1,63 @@
 .App {
-  text-align: center;
+	height: 100vh;
+	background-color: #fc4f5f;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.space-logo-wrapper {
+	display: inline-block;
+	position: relative;
+	width: 122px;
+	height: 58px;
+	margin: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.space-logo.space-logo-white {
+	background-image: url(https://www.space01.co.uk/wp-content/themes/space01/dist/img/space-logo-white.svg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.s-logo.s-logo-white {
+	background-image: url(https://www.space01.co.uk/wp-content/themes/space01/dist/img/s-logo-white.svg);
 }
 
-.App-link {
-  color: #61dafb;
+.space-logo-box-right.space-logo-white-box-right {
+	background-image: url(https://www.space01.co.uk/wp-content/themes/space01/dist/img/space-logo-white-box-right.svg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.space-logo {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 122px;
+	height: 58px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 122px 58px;
+	opacity: 1;
+	transition: opacity 0.25s ease-in-out;
+}
+
+.s-logo {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 122px;
+	height: 58px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 122px 58px;
+}
+
+.space-logo-box-right {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 93px;
+	width: 18px;
+	height: 58px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 18px 58px;
+	transition: 0.5s ease-in-out;
 }

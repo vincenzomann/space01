@@ -33,6 +33,11 @@ function App() {
 
 	return (
 		<div className="App">
+			<span className="space-logo-wrapper">
+				<span className="space-logo space-logo-white"></span>
+				<span className="s-logo s-logo-white"></span>
+				<span className="space-logo-box-right space-logo-white-box-right"></span>
+			</span>
 			<ListActions setFilter={setFilter} order={order} setOrder={setOrder} />
 			<ListItems data={items} />
 		</div>

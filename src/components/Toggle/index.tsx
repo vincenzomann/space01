@@ -1,5 +1,19 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { ToggleButtonGroup, ToggleButton } from '@mui/material';
+import { ToggleButtonGroup, ToggleButton, styled } from '@mui/material';
+
+const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+	margin: '2rem 0 1rem',
+	'& .MuiToggleButtonGroup-grouped': {
+		color: '#fff',
+		borderColor: '#fff',
+		'&:hover': {
+			backgroundColor: 'rgba(255, 255, 255, 0.2)',
+		},
+		'&.Mui-selected': {
+			backgroundColor: 'rgba(255, 255, 255, 0.2)',
+		},
+	},
+}));
 
 export enum ToggleValues {
 	CHEAPEST = 'cheapest',
@@ -23,17 +37,15 @@ const Toggle = ({ order, setOrder }: ListActionProps) => {
 	};
 
 	return (
-		<ToggleButtonGroup
-			color="primary"
+		<StyledToggleButtonGroup
 			value={order}
 			exclusive
 			onChange={handleChange}
 			aria-label="Platform"
-			sx={{ margin: '2rem 0 1rem' }}
 		>
 			<ToggleButton value={ToggleValues.CHEAPEST}>Cheapest</ToggleButton>
 			<ToggleButton value={ToggleValues.ALL}>All</ToggleButton>
-		</ToggleButtonGroup>
+		</StyledToggleButtonGroup>
 	);
 };
 
