@@ -9,7 +9,7 @@ interface ListItemsProps {
 const ListItems = ({ data }: ListItemsProps) => {
 
 	return (
-		<TableContainer component={Paper}>
+		<TableContainer component={Paper} sx={{ width: '300px', margin: '1rem auto' }}>
 			<Table aria-label="simple table">
 				<TableHead>
 					<TableRow >

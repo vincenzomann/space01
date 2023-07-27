@@ -3,21 +3,32 @@ import './App.css';
 import { Item, data } from './data';
 import ListActions from './components/ListActions';
 import ListItems from './components/ListItems';
+import { ToggleValues } from './components/Toggle';
 
 function App() {
 	const [items, setItems] = useState<Item[]>([]);
 	const [filter, setFilter] = useState('');
+	const [order, setOrder] = useState<ToggleValues>(ToggleValues.CHEAPEST);
 
 	useEffect(() => {
-		// on initial render, show 5 cheapest items
-		const sorted = [...data].sort((a, b) => a.price - b.price);
-		const limited = sorted.slice(0, 5);
-		setItems(limited);
-	}, []);
+
+		let items: Item[] = [];
+		switch (order) {
+			case ToggleValues.ALL:
+				items = data;
+				break;
+			case ToggleValues.CHEAPEST:
+			default:
+				// default order is 'cheapest', so on initial render show 5 cheapest items
+				items = [...data].sort((a, b) => a.price - b.price).slice(0, 5);
+				break;
+		}
+		setItems(items);
+	}, [order]);
 
 	return (
 		<div className="App">
-			<ListActions setItems={setItems} setFilter={setFilter} />
+			<ListActions setItems={setItems} setFilter={setFilter} order={order} setOrder={setOrder} />
 			<ListItems data={items} />
 		</div>
 	);
