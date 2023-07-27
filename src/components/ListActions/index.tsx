@@ -1,5 +1,4 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Item } from '../../data';
 import Toggle, { ToggleValues } from '../Toggle';
 import { Stack, TextField } from '@mui/material';
 

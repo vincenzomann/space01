@@ -22,4 +22,5 @@ test('input filters the list items', async () => {
 	fireEvent.change(input, { target: { value: 'h' } });
 	const listRows = await screen.findAllByTestId('list-row');
 	expect(listRows).toHaveLength(1);
+	expect(listRows.pop()).toHaveTextContent(/Item H/);
 });
